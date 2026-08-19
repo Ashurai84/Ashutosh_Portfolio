@@ -42,23 +42,36 @@ Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
 ```bash
-3d-portfolio/
+ashutosh-3d-portfolio/
   |- public/
   |- src/
     |-- assets/
     |-- components/
       |--- canvas/
       |--- about.tsx
+      |--- achievements.tsx
       |--- banner.tsx
+      |--- building-in-public.tsx
       |--- contact.tsx
       |--- experience.tsx
       |--- feedbacks.tsx
+      |--- final-cta.tsx
       |--- footer.tsx
+      |--- github-section.tsx
+      |--- hero-achievement-strip.tsx
       |--- hero.tsx
+      |--- icons.tsx
       |--- index.ts
+      |--- journey.tsx
+      |--- linkedin-section.tsx
       |--- loader.tsx
       |--- navbar.tsx
+      |--- resume-modal.tsx
+      |--- social-dock.tsx
+      |--- teaching.tsx
+      |--- tech-ticker.tsx
       |--- tech.tsx
+      |--- what-i-do.tsx
       |--- works.tsx
     |-- constants/
       |--- index.ts
@@ -79,6 +92,7 @@ Here is the folder structure of this app.
   |- bun.lock
   |- index.html
   |- netlify.toml
+  |- package-lock.json
   |- package.json
   |- postcss.config.cjs
   |- tailwind.config.ts
@@ -181,6 +195,7 @@ Useful resources and dependencies that are used in 3D Portfolio.
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.5.4
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [framer-motion](https://www.npmjs.com/package/framer-motion): ^13.1.0
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.32.0
 - [maath](https://www.npmjs.com/package/maath): ^0.10.8
 - [postcss](https://www.npmjs.com/package/postcss): ^8.5.26
 - [react](https://www.npmjs.com/package/react): ^19.2.8
