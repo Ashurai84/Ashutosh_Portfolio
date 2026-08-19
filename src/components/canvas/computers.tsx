@@ -1,86 +1,107 @@
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useState } from "react";
-
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../loader";
 
 type ComputersProps = {
   isMobile: boolean;
 };
 
-// Computers
+// 3D Desktop Computer Model Component
 const Computers = ({ isMobile }: ComputersProps) => {
-  // Import scene
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("/desktop_pc/scene.gltf");
 
   return (
-    // Mesh
     <mesh>
-      {/* Light */}
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <pointLight intensity={1} />
+      {/* Ambient & Cyber Lights */}
+      <hemisphereLight intensity={0.4} groundColor="#060919" />
+      <pointLight position={[0, 2.5, 0]} intensity={1.8} color="#00f0ff" />
+      <pointLight position={[-3, -1, -2]} intensity={1.4} color="#ec4899" />
+      <pointLight position={[3, 1, 2]} intensity={1.2} color="#f59e0b" />
+
       <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
+        position={[-15, 40, 15]}
+        angle={0.2}
         penumbra={1}
-        intensity={1}
+        intensity={2.2}
         castShadow
         shadow-mapSize={1024}
+        color="#ffffff"
       />
+
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        scale={isMobile ? 0.58 : 0.68}
+        position={isMobile ? [0, -2.5, -1.8] : [0, -2.7, -1.2]}
+        rotation={[-0.01, -0.2, -0.08]}
       />
     </mesh>
   );
 };
 
-// Computer Canvas
-const ComputersCanvas = () => {
-  // state to check mobile
+useGLTF.preload("/desktop_pc/scene.gltf");
+
+// Error fallback UI inside 3D Canvas
+class ModelErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return null;
+    }
+    return this.props.children;
+  }
+}
+
+// Computer Canvas with Enhanced 3D Orbit Controls
+export const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if device is Mobile
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
     setIsMobile(mediaQuery.matches);
 
-    // handle screen size change
     const handleMediaQueryChange = (event: MediaQueryListEvent) => {
       setIsMobile(event?.matches);
     };
 
     mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
   }, []);
 
   return (
-    <Canvas
-      frameloop="demand"
-      shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true, alpha: true }}
-    >
-      {/* Canvas Loader show on fallback */}
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        {/* Show Model */}
-        <Computers isMobile={isMobile} />
-      </Suspense>
-
-      {/* Preload all */}
-      <Preload all />
-    </Canvas>
+    <div className="w-full h-full min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] relative overflow-hidden flex items-center justify-center pointer-events-auto bg-transparent">
+      <Canvas
+        frameloop="always"
+        shadows
+        camera={{ position: [20, 3, 5], fov: 24 }}
+        gl={{ preserveDrawingBuffer: true, alpha: true, powerPreference: "high-performance" }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <ModelErrorBoundary>
+            <OrbitControls
+              enableZoom={false}
+              autoRotate
+              autoRotateSpeed={0.8}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2.3}
+            />
+            <Computers isMobile={isMobile} />
+          </ModelErrorBoundary>
+        </Suspense>
+        <Preload all />
+      </Canvas>
+    </div>
   );
 };
 

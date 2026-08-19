@@ -22,7 +22,8 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
-import threejs from "./tech/threejs.svg";
+import threejs from "./tech/threejs.png";
+import express from "./tech/express.png";
 import typescript from "./tech/typescript.png";
 
 import meta from "./company/meta.png";
@@ -30,16 +31,31 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-import project1 from "./projects/project1.png";
-import project2 from "./projects/project2.png";
-import project3 from "./projects/project3.png";
-import project4 from "./projects/project4.png";
-import project5 from "./projects/project5.png";
-import project6 from "./projects/project6.png";
+import project1 from "./projects/postaura.png";
+import project2 from "./projects/shayak.png";
+import project3 from "./projects/krishi.png";
+import project4 from "./projects/asrlab.png";
+import project5 from "./projects/smarthome.png";
+import project6 from "./projects/reauto.jpeg";
+
+import postauraImg from "./projects/postaura.png";
+import shayakImg from "./projects/shayak.png";
+import krishiImg from "./projects/krishi.png";
+import asrlabImg from "./projects/asrlab.png";
+import smarthomeImg from "./projects/smarthome.png";
+import reautoImg from "./projects/reauto.jpeg";
+import hackathonImg from "./hackathon.png";
+import fabricIqImg from "./fabric_iq.png";
 
 import user1 from "./testimonials/user1.jpg";
 import user2 from "./testimonials/user2.jpg";
 import user3 from "./testimonials/user3.jpg";
+import ashutoshAvatar from "./ashutosh_avatar.png";
+import poonam from "./testimonials/poonam.png";
+import arti from "./testimonials/arti.png";
+import teja from "./testimonials/teja.jpg";
+import teachBba from "./teach_bba.jpg";
+import teachMba from "./teach_mba.jpg";
 
 import github from "./socials/github.svg";
 import linkedin from "./socials/linkedin.svg";
@@ -69,6 +85,7 @@ export {
   tailwind,
   typescript,
   threejs,
+  express,
   meta,
   shopify,
   starbucks,
@@ -79,9 +96,23 @@ export {
   project4,
   project5,
   project6,
+  postauraImg,
+  shayakImg,
+  krishiImg,
+  asrlabImg,
+  smarthomeImg,
+  reautoImg,
+  hackathonImg,
+  fabricIqImg,
   user1,
   user2,
   user3,
+  ashutoshAvatar,
+  poonam,
+  arti,
+  teja,
+  teachBba,
+  teachMba,
   github,
   youtube,
   linkedin,

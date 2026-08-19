@@ -5,22 +5,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        primary: "#060919",
+        secondary: "#94a3b8",
+        tertiary: "#0f172a",
+        "black-100": "#0b1120",
+        "black-200": "#030712",
+        "white-100": "#f8fafc",
+        cyan: "#00f0ff",
+        violet: "#a855f7",
+        emerald: "#10b981",
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        card: "0px 20px 70px -10px rgba(0, 240, 255, 0.15), 0 0 25px -5px rgba(168, 85, 247, 0.2)",
       },
       screens: {
         xs: "450px",
       },
-      backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
-      },
+      backgroundImage: {},
     },
   },
   plugins: [],

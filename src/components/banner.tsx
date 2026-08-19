@@ -49,16 +49,16 @@ const Banner = ({ hide, setHide }: BannerProps) => {
             <span className="sr-only">Light bulb</span>
           </span>
           <span>
-            Did you enjoy this portfolio? Take a look at my{" "}
+            🚀 Try <span className="text-white font-semibold">PostAura</span> — AI writing workspace for LinkedIn:{" "}
             <Link
-              to="https://www.sanidhyy.name"
+              to="https://postaura.dev/"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline font-medium text-blue-600 underline underline-offset-2 decoration-600 hover:no-underline"
+              className="inline font-medium text-[#00f0ff] underline underline-offset-2 decoration-[#00f0ff] hover:no-underline"
             >
-              new portfolio
+              postaura.dev
             </Link>
-            .
+            !
           </span>
         </p>
       </div>
