@@ -35,7 +35,6 @@ export const Tech: React.FC = () => {
                     <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition">
                       {cat.icon === "code" && <Code className="w-5 h-5" />}
                       {cat.icon === "layout" && <Layout className="w-5 h-5" />}
-                      {cat.icon === "server" && <Server className="w-5 h-5" />}
                       {cat.icon === "cpu" && <Cpu className="w-5 h-5" />}
                       {cat.icon === "workflow" && <Workflow className="w-5 h-5" />}
                       {cat.icon === "database" && <Database className="w-5 h-5" />}

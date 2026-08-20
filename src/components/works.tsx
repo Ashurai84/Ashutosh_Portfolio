@@ -14,9 +14,9 @@ export const Works: React.FC = () => {
 
   const filteredProjects =
     selectedCategory === "All"
-      ? PROJECTS
-      : PROJECTS.filter(
-          (p) => p.category === selectedCategory || (selectedCategory === "AI & Startups" && p.category === "AI & Agents")
+      ? (PROJECTS as readonly any[])
+      : (PROJECTS as readonly any[]).filter(
+          (p) => p.category === selectedCategory
         );
 
   return (
@@ -136,7 +136,7 @@ export const Works: React.FC = () => {
                 <div className="mt-5 pt-3 border-t border-slate-800/80">
                   {/* Tech Tags */}
                   <div className="flex flex-wrap gap-1.5 mb-3.5">
-                    {project.tags.map((tag) => (
+                    {project.tags.map((tag: { name: string; color: string }) => (
                       <span
                         key={tag.name}
                         className={`text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-900 border border-slate-800 ${tag.color}`}

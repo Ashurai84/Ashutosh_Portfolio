@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Download, Sparkles, ExternalLink, Send } from "lucide-react";
+import { Menu, X, Download, Sparkles, ExternalLink } from "lucide-react";
 import { NAV_LINKS, PERSONAL_INFO } from "../constants";
 import { ashutoshAvatar } from "../assets";
 import { ResumeModal } from "./resume-modal";
@@ -97,19 +97,21 @@ export const Navbar: React.FC = () => {
           </ul>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5 shrink-0">
             <button
               onClick={() => setIsResumeOpen(true)}
-              className="text-xs px-3.5 py-1.5 rounded-xl border border-slate-700 bg-slate-900/80 text-slate-200 hover:border-pink-500/50 hover:text-white transition flex items-center gap-1.5"
+              className="text-xs px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-900/80 text-slate-200 hover:border-pink-500/50 hover:text-white transition flex items-center gap-1.5 whitespace-nowrap"
             >
-              <Download className="w-3.5 h-3.5 text-pink-400" /> Resume
+              <Download className="w-3.5 h-3.5 text-pink-400" />
+              <span>Resume</span>
             </button>
 
             <a
               href="#contact"
-              className="text-xs px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 via-orange-500 to-cyan-500 text-black font-bold shadow-md shadow-pink-500/20 hover:brightness-110 active:scale-95 transition flex items-center gap-1.5"
+              className="text-xs px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white font-bold shadow-md shadow-pink-500/20 hover:shadow-pink-500/35 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-1.5 whitespace-nowrap shrink-0"
             >
-              <Send className="w-3 h-3" /> Let's Connect
+              <span>Let's Connect</span>
+              <ExternalLink className="w-3.5 h-3.5 text-white" />
             </a>
           </div>
 

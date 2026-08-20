@@ -28,11 +28,12 @@ const LaserCable = ({
     return geo;
   }, [points]);
 
-  return (
-    <line geometry={lineGeometry}>
-      <lineBasicMaterial color={color} transparent opacity={0.45} linewidth={1.5} />
-    </line>
-  );
+  const lineObject = useMemo(() => {
+    const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.45, linewidth: 1.5 });
+    return new THREE.Line(lineGeometry, mat);
+  }, [lineGeometry, color]);
+
+  return <primitive object={lineObject} />;
 };
 
 // Pedestal & 3D Node Component with generous orbit radius to avoid collisions

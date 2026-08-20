@@ -101,10 +101,10 @@ export const Hero: React.FC = () => {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 text-sm font-medium hover:text-pink-400 hover:border-pink-500/40 transition flex items-center gap-1.5"
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 text-white font-extrabold text-sm shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-105 active:scale-95 transition-all duration-300 ease-out flex items-center gap-2"
               >
                 <span>Let's Connect</span>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                <ExternalLink className="w-4 h-4 text-white" />
               </a>
             </motion.div>
           </div>

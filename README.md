@@ -1,16 +1,16 @@
 <div align="center">
 
-  <!-- Header Banner (Local SVG - 100% Reliable Render) -->
+
   <img src="./public/banner.svg" width="100%" alt="Ashutosh Pankaj Rai - 3D Developer Portfolio & AI Systems" />
 
-  <!-- Animated Typing Headline -->
+
   <a href="https://github.com/Ashurai84">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=23&pause=1000&color=00F0FF&center=true&vCenter=true&width=620&lines=Full-Stack+Systems+Developer;Founder+%40+PostAura+(AI+Writing+Workspace);Best+Innovation+Award+%40+Hack+With+Mumbai+2.0;AI+%26+Automation+Engineer+%7C+Educator" alt="Typing SVG" />
   </a>
 
   <br /><br />
 
-  <!-- Status & Quick Links Badges -->
+
   <p align="center">
     <a href="https://postaura.dev/" target="_blank">
       <img src="https://img.shields.io/badge/PostAura-Live_Product-EC4899?style=for-the-badge&logo=rocket&logoColor=white" alt="PostAura" />
